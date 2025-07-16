@@ -1,0 +1,12 @@
+*.json
+*.csv
+*.txt
+*.log
+*.log.*
+*.log.*.*
+*.log.*.*.*
+*.log.*.*.*.*
+*.log.*.*.*.*.*
+
+/target
+/Cargo.lock

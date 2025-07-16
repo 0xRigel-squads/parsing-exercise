@@ -1,0 +1,40 @@
+[package]
+name = "indexer-core"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+# dotenv = "0.15.0"  # Removed for parsing exercise
+# futures = "0.3.31"  # Removed for parsing exercise
+# solana-client = "2.1.1"  # Removed for parsing exercise
+
+solana-sdk = "2.1.1"
+solana-pubkey = { version = "2.1.1", features = ["serde"] }
+solana-signature = { version = "2.1.1", features = ["serde"] }
+solana-transaction-status = "2.1.1"
+# solana-transaction-status-client-types = "2.1.1"  # Removed for parsing exercise
+tokio = { version = "1.43.0", features = ["full"] }
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["time"] }
+# yellowstone-grpc-client = "5.0.0"  # Removed for parsing exercise
+# yellowstone-grpc-proto = "5.0.0"  # Removed for parsing exercise
+# Redis dependencies removed - using local emulator
+async-trait = "0.1.87"
+# postgres_models = { path = "../postgres_models" }  # Removed for parsing exercise
+serde = { version = "1.0", features = ["derive"] }
+chrono = { version = "0.4", features = ["serde"] }
+anyhow = "1.0"
+# hex = "0.4.3"  # Removed for parsing exercise
+# borsh = "1.5.5"  # Removed for parsing exercise
+# jsonrpc-core = "18.0.0"  # Removed for parsing exercise
+serde_json = "1.0"
+spl-token = "7.0.0"
+# bincode = { version = "1.3.3" }  # Removed for parsing exercise
+spl-token-2022 = "7.0.0"
+uuid = { version = "1.15.1", features = ["v4", "serde"] }
+fxhash = "0.2.1"
+once_cell = "1.21.3"
+
+[dev-dependencies]
+rand = "0.9.0"
+uuid = { version = "1.15.1", features = ["v4", "serde"] }
