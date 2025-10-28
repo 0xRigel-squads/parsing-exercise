@@ -70,16 +70,10 @@ impl LocalRedisEmulator {
             token_owners.insert(Pubkey::new_unique());
         }
 
-        // Generate 25k unique vault addresses
-        let mut vault_addresses = FxHashSet::default();
-        for _ in 0..25_000 {
-            vault_addresses.insert(Pubkey::new_unique());
-        }
-
         // Update the cache with realistic data
         self.relevant_account_cache.token_account_owners = Some(token_owners);
 
-        info!("Populated Redis emulator with 125k token owners and 25k vault addresses");
+        info!("Populated Redis emulator with 125k token owners");
     }
 }
 

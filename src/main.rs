@@ -99,8 +99,6 @@ async fn main() -> Result<()> {
 
     info!("=== BENCHMARK RESULTS ===");
     info!("Total transactions processed: {}", transactions_to_process);
-    info!("Successful parses: {}", successful_parses);
-    info!("Failed parses: {}", failed_parses);
     info!("Total duration: {:.2}s", duration.as_secs_f64());
     info!("Transactions per second (TPS): {:.2}", tps);
     info!(

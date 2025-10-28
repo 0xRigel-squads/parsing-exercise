@@ -99,7 +99,7 @@ impl ProgramParser for TokenProgramParser {
         };
 
         let mut result = TokenProgramParsingResult::new();
-        
+
         // Collect all owners to check for batch filtering. Saves us multiple redis calls per txn.
         let mut all_owners_to_check = Vec::new();
 
@@ -118,12 +118,12 @@ impl ProgramParser for TokenProgramParser {
             let token_account_address = account_keys[token_account_index];
 
             // Assume account 1 is the owner/mint (simplified assumption)
-            let owner_mint_index = ix.accounts[1] as usize;
-            if owner_mint_index >= account_keys.len() {
+            let owner_index = ix.accounts[1] as usize;
+            if owner_index >= account_keys.len() {
                 continue;
             }
 
-            let owner_mint_address = account_keys[owner_mint_index];
+            let owner_address = account_keys[owner_index];
 
             // Try to find post balance for this account
             let maybe_post_balance = post_token_balances
@@ -149,8 +149,8 @@ impl ProgramParser for TokenProgramParser {
                         0,
                         0,
                         "0".to_string(),
-                        owner_mint_address,
-                        owner_mint_address,
+                        owner_address,
+                        owner_address,
                     )
                 };
 
